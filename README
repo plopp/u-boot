@@ -1,3 +1,17 @@
+To compile for BBB:
+
+make ARCH=arm CROSS_COMPILE=${CC} distclean
+make ARCH=arm CROSS_COMPILE=${CC} am335x_boneblack
+make ARCH=arm CROSS_COMPILE=${CC}
+
+See: 
+
+http://eewiki.net/display/linuxonarm/BeagleBone+Black
+
+for further details.
+
+Everything below is comes from the standard u-boot-git repo:
+
 #
 # (C) Copyright 2000 - 2013
 # Wolfgang Denk, DENX Software Engineering, wd@denx.de.
