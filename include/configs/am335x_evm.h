@@ -31,6 +31,11 @@
 /* Always 128 KiB env size */
 #define CONFIG_ENV_SIZE			(128 << 10)
 
+#define CONFIG_AUTOBOOT
+#define CONFIG_AUTOBOOT_KEYED
+#define CONFIG_AUTOBOOT_PROMPT "Type <delay> in %d seconds to get to U-boot-prompt\n", bootdelay
+#define CONFIG_AUTOBOOT_DELAY_STR "delay"
+
 #ifdef CONFIG_NAND
 #define NANDARGS \
 	"mtdids=" MTDIDS_DEFAULT "\0" \
