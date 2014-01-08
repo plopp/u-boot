@@ -36,6 +36,12 @@ http://elinux.org/Beagleboard:Updating_The_Software
 If you don’t want to setup a cross compiler, just compile it directly on the BBB.
 You need ”apt-get install build-essential”.
 
+Credits:
+========
+
+The solution was proposed by AndrewTaneGlen on the Beagleboard Google groups forum:
+https://groups.google.com/forum/#!topic/beagleboard/aXv6An1xfqI
+
 Everything below is from the standard u-boot git-repo README.MD:
 
 #
