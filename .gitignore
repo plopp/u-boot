@@ -17,6 +17,7 @@
 *.bin
 *.cfgtmp
 *.dts.tmp
+*.DS_Store
 
 # Build tree
 /build-*
