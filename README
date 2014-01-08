@@ -1,14 +1,42 @@
-To compile for BBB:
+== Beaglebone Black inconsistent boot fix ==
+
+Purpose:
+========
+
+The purpose of this fork of the original u-boot repo is to modify the boot behavior
+of the Beaglebone Black (BBB). 
+
+Problem:
+========
+
+A problem with spurious garbage on the RX pin of the UART0 sometimes prevents the BBB from booting since the garbage opens the u-boot prompt, and the kernel never loads.
+
+Solution:
+=========
+
+Instead of listening for _any_ data on the RX pin of UART0, this version is modified to listen for the string: ”delay”. The time waiting for this string has been prolonged from
+1s to 3s to make it easier to write it in case one needs to access the u-boot prompt.
+
+Disclaimer:
+===========
+
+This fork works for the A5C revision of the board and has not been tested on any other
+hardware. Date: January 8 2014.
+ 
+Workflow:
+=========
+
+To compile for BBB (See: http://eewiki.net/display/linuxonarm/BeagleBone+Black for further details):
 
 make ARCH=arm CROSS_COMPILE=${CC} distclean
 make ARCH=arm CROSS_COMPILE=${CC} am335x_boneblack
 make ARCH=arm CROSS_COMPILE=${CC}
 
-See: 
+Copy the resulting MLO and u-boot.img to /boot/uboot/ and reboot the BBB. If the boot
+loader does not work for whatever reason, the board is _not_ bricked. Just boot from
+an SD-card or copy an SD-card to the onboard eMMC: 
 
-http://eewiki.net/display/linuxonarm/BeagleBone+Black
-
-for further details.
+http://elinux.org/Beagleboard:Updating_The_Software
 
 Everything below is from the standard u-boot git-repo README.MD:
 
