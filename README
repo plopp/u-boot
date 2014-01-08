@@ -3,8 +3,7 @@
 Purpose:
 ========
 
-The purpose of this fork of the original u-boot repo is to modify the boot behavior
-of the Beaglebone Black (BBB). 
+The purpose of this fork of the original u-boot repo is to modify the boot behavior of the Beaglebone Black (BBB). 
 
 Problem:
 ========
@@ -14,14 +13,12 @@ A problem with spurious garbage on the RX pin of the UART0 sometimes prevents th
 Solution:
 =========
 
-Instead of listening for _any_ data on the RX pin of UART0, this version is modified to listen for the string: ”delay”. The time waiting for this string has been prolonged from
-1s to 3s to make it easier to write it in case one needs to access the u-boot prompt.
+Instead of listening for _any_ data on the RX pin of UART0, this version is modified to listen for the string: ”delay”. The time waiting for this string has been prolonged from 1s to 3s to make it easier to write it in case one needs to access the u-boot prompt.
 
 Disclaimer:
 ===========
 
-This fork works for the A5C revision of the board and has not been tested on any other
-hardware. Date: January 8 2014.
+This fork works for the A5C revision of the board and has not been tested on any other hardware. Date: January 8 2014.
  
 Workflow:
 =========
@@ -32,9 +29,7 @@ make ARCH=arm CROSS_COMPILE=${CC} distclean
 make ARCH=arm CROSS_COMPILE=${CC} am335x_boneblack
 make ARCH=arm CROSS_COMPILE=${CC}
 
-Copy the resulting MLO and u-boot.img to /boot/uboot/ and reboot the BBB. If the boot
-loader does not work for whatever reason, the board is _not_ bricked. Just boot from
-an SD-card or copy an SD-card to the onboard eMMC: 
+Copy the resulting MLO and u-boot.img to /boot/uboot/ and reboot the BBB. If the boot loader does not work for whatever reason, the board is _not_ bricked. Just boot from an SD-card or copy an SD-card to the onboard eMMC: 
 
 http://elinux.org/Beagleboard:Updating_The_Software
 
