@@ -33,6 +33,9 @@ Copy the resulting MLO and u-boot.img to /boot/uboot/ and reboot the BBB. If the
 
 http://elinux.org/Beagleboard:Updating_The_Software
 
+If you don’t want to setup a cross compiler, just compile it directly on the BBB.
+You need ”apt-get install build-essential”.
+
 Everything below is from the standard u-boot git-repo README.MD:
 
 #
