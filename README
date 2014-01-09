@@ -15,6 +15,14 @@ Solution:
 
 Instead of listening for _any_ data on the RX pin of UART0, this version is modified to listen for the string: ”delay”. The time waiting for this string has been prolonged from 1s to 3s to make it easier to write it in case one needs to access the u-boot prompt.
 
+U-boot version:
+===============
+
+This fork was created from the latest version of u-boot as of January 8 2014 and the
+following patch has been applied:
+
+https://github.com/eewiki/u-boot-patches/blob/master/v2013.04-rc2/0001-am335x_evm-uEnv.txt-bootz-n-fixes.patch
+
 Disclaimer:
 ===========
 
@@ -41,6 +49,11 @@ Credits:
 
 The solution was proposed by AndrewTaneGlen on the Beagleboard Google groups forum:
 https://groups.google.com/forum/#!topic/beagleboard/aXv6An1xfqI
+
+Todo:
+=====
+
+Make this a patch instead of a fork.
 
 Everything below is from the standard u-boot git-repo README.MD:
 
