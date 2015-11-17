@@ -32,12 +32,23 @@ Workflow:
 =========
 
 To compile for BBB (See: http://eewiki.net/display/linuxonarm/BeagleBone+Black for further details):
-
+```
 make ARCH=arm CROSS_COMPILE=${CC} distclean
 make ARCH=arm CROSS_COMPILE=${CC} am335x_boneblack
 make ARCH=arm CROSS_COMPILE=${CC}
+```
 
+Copy U-boot to eMMC:
+====================
+
+For older kernels (sometime before beginning of 2014):
 Copy the resulting MLO and u-boot.img to /boot/uboot/ and reboot the BBB. If the boot loader does not work for whatever reason, the board is _not_ bricked. Just boot from an SD-card or copy an SD-card to the onboard eMMC: 
+
+For kernels after beginning of 2014:
+```
+dd if=MLO of=/dev/mmcblk0 bs=512 seek=256 count=256 conv=notrunc
+dd if=u-boot.img of=/dev/mmcblk0 bs=512 seek=768 count=1024 conv=notrunc
+```
 
 http://elinux.org/Beagleboard:Updating_The_Software
 
